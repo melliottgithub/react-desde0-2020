@@ -7,8 +7,8 @@ const PropsObjext = () => {
     <Fragment>
       <Header />
       <Person
-        info={{ age: 30, birthday: new Date(1989, 11, 4), name: "Carlos" }}
-      />
+        info={{ age: 30, birthday: new Date(1989, 11, 4), name: "Carlos" }}>Hello I am here</Person>
+          
     </Fragment>
   );
 };
