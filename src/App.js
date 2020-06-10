@@ -1,26 +1,20 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Fragment } from "react";
+import "./App.css";
+import PropsObjext from "./components/PropsObjext";
+// import Header from "./components/Header";
+// import Person from "./components/Person";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Fragment>
+      <PropsObjext />
+    </Fragment>
   );
+  {/* <Header />
+  <Person name="Pepe"
+    age={27} birthday={new Date(1993, 11, 4)} />
+  <Person name="Carlos" age={30} birthday={new Date(1989, 11, 4)} />
+  <Person name="Juan" age={56} birthday={new Date(1964, 11, 4)} /> */}
 }
 
 export default App;
