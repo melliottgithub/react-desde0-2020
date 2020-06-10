@@ -4,15 +4,15 @@ class Events extends Component {
   e;
 
   handleClick = (e,m) => {
+      console.log(e);
       console.log(m);
-      console.log(e.target);
   };
 
   render() {
     return (
       <Fragment>
         <h1>Events</h1>
-        <button onClick={(e) =>this.handleClick(e,'hello')}>Click me!</button>
+        <button onClick={this.handleClick.bind(this,'hello')}>Click me!</button>
       </Fragment>
     );
   }
