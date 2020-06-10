@@ -9,7 +9,7 @@ const Card = ({ title, img, author, tags, views, date, children }) => {
       <p className="card__description">{children}</p>
       <p className="card__author">{author}</p>
       <ul className="card__tags">
-              {tags.map(({ tag,key }) => (
+              {tags.map(({ tag }) => (
                   <li key={id()} className="card__tag">
             {tag}
           </li>
