@@ -8,6 +8,10 @@ class App extends Component {
     this.state = { number: 0 };
   }
 
+  componentDidMount() {
+    
+  }
+
   render() {
     if (true) {
       return (
