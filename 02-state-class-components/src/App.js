@@ -3,7 +3,7 @@ import "./App.css";
 
 class App extends Component {
 
-  state = { number: 5 };
+  state = { number: this.props.number };
 
   handleIncrement = () => {
     this.setState({ number: this.state.number + 1 });
@@ -31,5 +31,7 @@ class App extends Component {
     );
   }
 }
+
+App.defaultProps = {number: 0}
 
 export default App;
