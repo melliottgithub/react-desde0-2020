@@ -3,9 +3,10 @@ import "./form.css";
 
 class Form extends Component {
   state = {
-    name: "Mike",
-    gender: "man",
-    language: "en",
+    name: "Enter Name",
+    gender: "woman",
+    language: "es",
+    terms: false,
   };
 
   handleSubmit = (e) => {
@@ -14,6 +15,12 @@ class Form extends Component {
 
   handleChange = (e) => {
     this.setState({ [e.target.name]: e.target.value });
+  };
+
+  handleTerms = (e) => {
+    this.setState({
+      terms: !this.state.terms,
+    });
   };
 
   render() {
@@ -75,7 +82,12 @@ class Form extends Component {
           <label className="form__label" htmlFor="languaje">
             Language
           </label>
-          <select name="language" id="language">
+          <select
+            name="language"
+            id="language"
+            defaultChecked
+            onChange={this.handleChange}
+          >
             <option value="es">Spanish</option>
             <option value="en">English</option>
           </select>
@@ -85,13 +97,14 @@ class Form extends Component {
             Terms and conditions
           </label>
           <input
+            onChange={this.handleTerms}
             className="form__input"
             type="checkbox"
             id="other"
             name="gender"
           />
         </div>
-        <input className="form__submit" type="submit" value="send" />
+        <input disabled={!this.state.terms} className="form__submit" type="submit" value="send" />
       </form>
     );
   }
