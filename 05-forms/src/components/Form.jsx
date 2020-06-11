@@ -1,22 +1,24 @@
 import React, { Component } from "react";
 import "./form.css";
-import { createRef } from "react";
 
 class Form extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
-
-  name = createRef();
+  state = {
+    name: "",
+  };
 
   handleSubmit = (e) => {
     e.preventDefault();
   };
 
+  handleChange = (e) => {
+    this.setState({ name: e.target.value });
+  };
+
   render() {
     return (
       <form className="form" onSubmit={this.handleSubmit}>
+        <p>{JSON.stringify(this.state)}</p>
+
         <h1>Forms</h1>
         <div className="form__field">
           <label className="form__label" htmlFor="name">
@@ -26,7 +28,7 @@ class Form extends Component {
             className="form__input"
             type="text"
             id="name"
-            ref={this.name}
+            onChange={this.handleChange}
           />
         </div>
         <div className="form__field">
