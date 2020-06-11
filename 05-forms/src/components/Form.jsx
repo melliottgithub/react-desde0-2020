@@ -1,20 +1,33 @@
 import React, { Component } from "react";
 import "./form.css";
+import { createRef } from "react";
 
 class Form extends Component {
   constructor(props) {
     super(props);
     this.state = {};
   }
+
+  name = createRef();
+
+  handleSubmit = (e) => {
+    e.preventDefault();
+  };
+
   render() {
     return (
-      <form className="form">
+      <form className="form" onSubmit={this.handleSubmit}>
         <h1>Forms</h1>
         <div className="form__field">
           <label className="form__label" htmlFor="name">
             Name
           </label>
-          <input className="form__input" type="text" id="name" />
+          <input
+            className="form__input"
+            type="text"
+            id="name"
+            ref={this.name}
+          />
         </div>
         <div className="form__field">
           <label className="form__label form__label--radio" htmlFor="man">
