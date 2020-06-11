@@ -3,7 +3,9 @@ import "./form.css";
 
 class Form extends Component {
   state = {
-    name: "",
+    name: "Mike",
+    gender: "man",
+    language: "en",
   };
 
   handleSubmit = (e) => {
@@ -11,7 +13,7 @@ class Form extends Component {
   };
 
   handleChange = (e) => {
-    this.setState({ name: e.target.value });
+    this.setState({ [e.target.name]: e.target.value });
   };
 
   render() {
@@ -28,6 +30,7 @@ class Form extends Component {
             className="form__input"
             type="text"
             id="name"
+            name="name"
             onChange={this.handleChange}
           />
         </div>
@@ -35,7 +38,14 @@ class Form extends Component {
           <label className="form__label form__label--radio" htmlFor="man">
             Man
           </label>
-          <input className="form__input" type="radio" id="man" name="gender" />
+          <input
+            className="form__input"
+            type="radio"
+            id="man"
+            name="gender"
+            onChange={this.handleChange}
+            value="man"
+          />
 
           <label className="form__label form__label--radio" htmlFor="woman">
             Woman
@@ -45,6 +55,8 @@ class Form extends Component {
             type="radio"
             id="woman"
             name="gender"
+            onChange={this.handleChange}
+            value="woman"
           />
 
           <label className="form__label form__label--radio" htmlFor="other">
@@ -54,7 +66,9 @@ class Form extends Component {
             className="form__input"
             type="radio"
             id="other"
+            onChange={this.handleChange}
             name="gender"
+            value="other"
           />
         </div>
         <div className="form__field">
